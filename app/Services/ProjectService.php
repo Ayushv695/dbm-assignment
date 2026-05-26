@@ -9,7 +9,7 @@ class ProjectService
     public function getProjects(array $filters)
     {
 
-        $query = Project::with('creator:name,id');
+        $query = Project::with('creator:name,id,role');
 
         if (!empty($filters['search'])) {
             $query->where('name', 'LIKE', '%' . $filters['search'] . '%');
@@ -33,15 +33,24 @@ class ProjectService
 
     public function create(array $data)
     {
-        $data['created_by'] = auth()->id();
+        try{
+            $data['created_by'] = auth()->id();
+            $project = Project::create($data);
+            $project->load('creator:id,name,role');
 
-        $project = Project::create($data);
+            return response()->json([
+                'status' => true,
+                'message' => 'Project created successfully',
+                'data' => $project
+            ], 201);
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Project created successfully',
-            'data' => $project
-        ], 201);
+        }catch (\Exception $e) {
+
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+            ], 404);
+        }
     }
 
     public function update(string $project_id, array $data)
@@ -60,7 +69,7 @@ class ProjectService
 
             return response()->json([
                 'status' => false,
-                'message' => 'Project not found',
+                'message' => $e->getMessage(),
             ], 404);
         }
     }
@@ -79,7 +88,7 @@ class ProjectService
 
             return response()->json([
                 'status' => false,
-                'message' => 'Project not found',
+                'message' => $e->getMessage(),
             ], 404);
         }
     }
@@ -88,7 +97,7 @@ class ProjectService
     {
         try {
 
-            $project = Project::with('creator:name,id')->select('id','name','description','created_by')->findOrFail($project_id);
+            $project = Project::with('creator:name,id,role')->select('id','name','description','created_by')->findOrFail($project_id);
             return response()->json([
                 'status' => true,
                 'data' => $project
@@ -98,7 +107,7 @@ class ProjectService
 
             return response()->json([
                 'status' => false,
-                'message' => 'Project not found',
+                'message' => $e->getMessage(),
             ], 404);
         }
     }
