@@ -1,0 +1,850 @@
+{
+  "info": {
+    "_postman_id": "94741c77-de12-4dec-8494-b0a1ae1e9924",
+    "name": "dbm assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30230012",
+    "_collection_link": "https://go.postman.co/collection/30230012-94741c77-de12-4dec-8494-b0a1ae1e9924?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"ankit verma\",\r\n    \"email\":\"ankit@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"password_confirmation\":\"password\",\r\n    \"role\":\"employee\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"ayush verma\",\r\n    \"email\":\"vermaayush695@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "1|6VqeUonNOPOwksrbnQ9hErulQqZ5GlEQqkXsW67Z122ebbd3",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "1|6VqeUonNOPOwksrbnQ9hErulQqZ5GlEQqkXsW67Z122ebbd3",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Projects Crud",
+      "item": [
+        {
+          "name": "Add Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "C",
+                  "type": "text",
+                  "uuid": "3fa2e657-b0de-4e95-b80c-47d67acc20d6"
+                },
+                {
+                  "key": "description",
+                  "value": "Robert C. Martin",
+                  "type": "text",
+                  "uuid": "1d4d6872-0e33-433d-9c25-1ead639c6bfc"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/project/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "project",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "46bfa8bf-360b-449d-9c90-c7d2d58f04be"
+                },
+                {
+                  "key": "title",
+                  "value": "Laravel Book",
+                  "type": "text",
+                  "uuid": "83c1b2bf-b700-4111-93a9-6a7767b6eaa5"
+                },
+                {
+                  "key": "description",
+                  "value": "hell ",
+                  "type": "text",
+                  "uuid": "101cc65d-dd0d-44a0-afd0-1ac1334c9314"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/project/update/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "project",
+                "update",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch Project",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/project/view/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "project",
+                "view",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Projects List",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/project?page=1&sort_by=id&sort_order=asc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "project"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "clean",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "id"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/project/delete/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "project",
+                "delete",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Task Crud",
+      "item": [
+        {
+          "name": "Add Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "project_id",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "3fa2e657-b0de-4e95-b80c-47d67acc20d6"
+                },
+                {
+                  "key": "assigned_to",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "1d4d6872-0e33-433d-9c25-1ead639c6bfc"
+                },
+                {
+                  "key": "title",
+                  "value": "task laarvel",
+                  "type": "text",
+                  "uuid": "f92e846a-67e1-4ccf-9356-19eebed11a61"
+                },
+                {
+                  "key": "description",
+                  "value": "demo task",
+                  "type": "text",
+                  "uuid": "c8da0d28-57b3-4a4d-b336-3b83b686415c"
+                },
+                {
+                  "key": "status",
+                  "value": "pending",
+                  "type": "text",
+                  "uuid": "30bd9fdd-2307-43eb-b034-814d20ae39ea"
+                },
+                {
+                  "key": "priority",
+                  "value": "high",
+                  "type": "text",
+                  "uuid": "2b37a6dd-716d-4be6-968c-39d6f377aaa7"
+                },
+                {
+                  "key": "due_date",
+                  "value": "2026-05-25",
+                  "type": "text",
+                  "uuid": "7cba7394-b5b5-40f3-afb0-909be1e08704"
+                },
+                {
+                  "key": "attachment",
+                  "type": "file",
+                  "uuid": "9546fa92-86d6-49ba-9bec-00595a67df64",
+                  "src": "/C:/Users/verma/Pictures/Screenshots/Screenshot (65).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/task/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "task",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "project_id",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "3fa2e657-b0de-4e95-b80c-47d67acc20d6"
+                },
+                {
+                  "key": "assigned_to",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "1d4d6872-0e33-433d-9c25-1ead639c6bfc"
+                },
+                {
+                  "key": "title",
+                  "value": "task update",
+                  "type": "text",
+                  "uuid": "f92e846a-67e1-4ccf-9356-19eebed11a61"
+                },
+                {
+                  "key": "description",
+                  "value": "demo task",
+                  "type": "text",
+                  "uuid": "c8da0d28-57b3-4a4d-b336-3b83b686415c"
+                },
+                {
+                  "key": "status",
+                  "value": "pending",
+                  "type": "text",
+                  "uuid": "30bd9fdd-2307-43eb-b034-814d20ae39ea"
+                },
+                {
+                  "key": "priority",
+                  "value": "high",
+                  "type": "text",
+                  "uuid": "2b37a6dd-716d-4be6-968c-39d6f377aaa7"
+                },
+                {
+                  "key": "due_date",
+                  "value": "2026-05-25",
+                  "type": "text",
+                  "uuid": "7cba7394-b5b5-40f3-afb0-909be1e08704"
+                },
+                {
+                  "key": "attachment",
+                  "type": "file",
+                  "uuid": "9546fa92-86d6-49ba-9bec-00595a67df64",
+                  "value": null
+                },
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "d90573cf-e948-4026-99fa-7ac5039728b3"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/task/update/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "task",
+                "update",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch Task",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/task/view/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "task",
+                "view",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tasks List",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/task?page=1&sort_by=id&sort_order=asc&assigned_to&priority&status=completed",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "task"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "clean",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "sort_by",
+                  "value": "id"
+                },
+                {
+                  "key": "sort_order",
+                  "value": "asc"
+                },
+                {
+                  "key": "assigned_to",
+                  "value": null,
+                  "type": "text"
+                },
+                {
+                  "key": "priority",
+                  "value": null,
+                  "type": "text"
+                },
+                {
+                  "key": "status",
+                  "value": "completed",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Task",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost/dbm-assignment/api/task/delete/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "dbm-assignment",
+                "api",
+                "task",
+                "delete",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost/dbm-assignment/api/dashboard/analytics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "dbm-assignment",
+            "api",
+            "dashboard",
+            "analytics"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
