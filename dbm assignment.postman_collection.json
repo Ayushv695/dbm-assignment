@@ -68,7 +68,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\":\"ayush verma\",\r\n    \"email\":\"vermaayush695@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+              "raw": "{\r\n    \"name\":\"avinash verma\",\r\n    \"email\":\"vavinash513@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -185,7 +185,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "value": "3|emEjbKzgaAeg48qNSlHjAOW4O93U2YRXRjqv7PTlf6a62309",
                   "type": "string"
                 }
               ]
@@ -203,7 +203,7 @@
               "formdata": [
                 {
                   "key": "name",
-                  "value": "C",
+                  "value": "C#",
                   "type": "text",
                   "uuid": "3fa2e657-b0de-4e95-b80c-47d67acc20d6"
                 },
@@ -239,7 +239,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "value": "3|emEjbKzgaAeg48qNSlHjAOW4O93U2YRXRjqv7PTlf6a62309",
                   "type": "string"
                 }
               ]
@@ -262,7 +262,7 @@
                   "uuid": "46bfa8bf-360b-449d-9c90-c7d2d58f04be"
                 },
                 {
-                  "key": "title",
+                  "key": "name",
                   "value": "Laravel Book",
                   "type": "text",
                   "uuid": "83c1b2bf-b700-4111-93a9-6a7767b6eaa5"
@@ -303,7 +303,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "value": "3|emEjbKzgaAeg48qNSlHjAOW4O93U2YRXRjqv7PTlf6a62309",
                   "type": "string"
                 }
               ]
@@ -348,7 +348,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "value": "3|emEjbKzgaAeg48qNSlHjAOW4O93U2YRXRjqv7PTlf6a62309",
                   "type": "string"
                 }
               ]
@@ -412,7 +412,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "2|WugTgIdHkFFl7Xp2u31CpitwX7lweVY6mrEQFerF48887e8d",
+                  "value": "3|emEjbKzgaAeg48qNSlHjAOW4O93U2YRXRjqv7PTlf6a62309",
                   "type": "string"
                 }
               ]
@@ -430,7 +430,7 @@
               "formdata": []
             },
             "url": {
-              "raw": "http://localhost/dbm-assignment/api/project/delete/1",
+              "raw": "http://localhost/dbm-assignment/api/project/delete/8",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -440,7 +440,7 @@
                 "api",
                 "project",
                 "delete",
-                "1"
+                "8"
               ]
             }
           },

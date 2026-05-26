@@ -58,11 +58,12 @@ class ProjectService
         try {
             $project = Project::findOrFail($project_id);
             $project->update($data);
-
+            $project->refresh()->load('creator:id,name,role');
+            
             return response()->json([
                 'status' => true,
                 'message' => 'Project updated successfully',
-                'data' => $project->refresh()
+                'data' => $project
             ]);
 
         } catch (\Exception $e) {
