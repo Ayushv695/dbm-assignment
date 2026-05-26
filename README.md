@@ -15,8 +15,8 @@ A full-featured REST API built with Laravel 9 covering authentication, project m
 ### 1. Clone & Install
 
 ```bash
-git clone <repo-url> dbm-assignment
-cd task-dbm
+git clone https://github.com/Ayushv695/dbm-assignment.git dbm-assignment
+cd dbm-assignment
 composer install
 ```
 
